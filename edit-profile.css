@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+:root{
+    /*===== Colores =====*/
+    --first-color: #1A73E8;
+    --input-color: #80868B;
+    --border-color: #DADCE0;
+  
+    /*===== Fuente y tipografia =====*/
+    --body-font: 'Roboto', sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .75rem;
+  }
+    
+  /*===== BASE =====*/
+  *,::before,::after{
+    box-sizing: border-box;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+  }
+.wrapper {
+    height: 150px;
+    width: 150px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    background: url('https://i.imgur.com/0eg0aG0.jpg');
+    background-size: 100% 100%;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.avatar {
+    outline: none;
+    position: absolute;
+    bottom: 0;
+    color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.5s;
+    background:rgba(0,0,0,0.5);
+    left: 0px;
+    padding: 5px 60px;
+    opacity: 0;
+
+}
+.avatar::-webkit-file-upload-button{
+    visibility: hidden;
+}
+.avatar::before {
+    font-family: fontAwesome;
+    content: '\f030';
+    font-size: 20px;
+    color: #fff;
+    display: inline-block;
+    -webkit-user-select: none;
+}
+.avatar:hover {
+    opacity: 1;
+}
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button {
+    background: #BA68C8;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+body {
+    margin: 0;
+    color: #2e323c;
+    background: #f5f6fa;
+    position: relative;
+    height: 100%;
+}
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #007ae1;
+}
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+
+h1{
+    margin: 0;
+  }
+  
+  /*===== FORM =====*/
+  .form__div{
+    position: relative;
+    height: 40px;
+    margin-bottom: 1.5rem;
+  }
+  .form__input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: var(--normal-font-size);
+    border: 1px solid var(--border-color);
+    border-radius: .5rem;
+    outline: none;
+    padding: 1rem;
+    background: none;
+    z-index: 1;
+  }
+  textarea.form__input{
+      height: 200%;
+  }
+  .form__label{
+    position: absolute;
+    top: -.5rem;
+    left: .8rem;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    z-index: 10;
+    padding: 0 .25rem;
+    background-color: #fff;
+    color: var(--input-color);
+    transition: .3s;
+  }
+  input[type="reset"]:hover, input[type="submit"]:hover{ 
+    box-shadow: 0 10px 36px rgba(0,0,0,.15);
+  }
+  
+  input[type="reset"] {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    
+  }
+  /*Input focus move up label*/
+  .form__input:focus + .form__label{
+    top: -.5rem;
+    left: .8rem;
+    color: var(--first-color);
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    z-index: 10;
+  }
+  .form__input:for
+  /*Input focus sticky top label*/
+  .form__input:not(:placeholder-shown).form__input:not(:focus)+ .form__label{
+    top: -.5rem;
+    left: .8rem;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    z-index: 10;
+  }
+  
+  /*Input focus*/
+  .form__input:focus{
+    border: 1.5px solid var(--first-color);
+  }
+  .form__input:focus + .form__label {
+    color: var(--first-color);
+  }
