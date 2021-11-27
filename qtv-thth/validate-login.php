@@ -26,7 +26,8 @@
                             header('location:admin-dashboard.php');
                         }
                         else
-                        {echo "người dùng";}
+                        { $_SESSION['user_id'] = $id;
+                          echo "người dùng";}
                         
                           
                       }
