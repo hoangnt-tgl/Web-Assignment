@@ -16,7 +16,19 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
-
+    <?php
+    session_start();
+    if (!isset($_SESSION['error']) )
+    {
+        $_SESSION['error'] = "";
+    }
+    $username_error =$_SESSION["error"];
+    $password_error  =$_SESSION["error"];
+    $rp_password_error  =$_SESSION["error"];
+    $email_error  =$_SESSION["error"];
+    $phone_error  =$_SESSION["error"];
+    $birthday_error  =$_SESSION["error"];
+    ?>
     <section class="register py-5">
             
             <div class = "container">
@@ -24,128 +36,100 @@
                     
 
                     <div class="col-lg-12 text-center py-5">
-                    <?
-                                   echo "1l";
-                                    if(array_key_exists('register-btn', $_POST)) {
-                                        register_newuser();
-                                    }
-                                    function register_newuser() {
-                                        $servername = "localhost";
-                                        $username = "root";
-                                        $password = "";
-                                        $dbname = "thth";
-                                        $conn = new mysqli($servername, $username, $password, $dbname);
-                                        if ($conn->connect_error) {
-                                            die("Connection failed: " . $conn->connect_error);
-                                            }
-                                        $id = $_POST["id"];
-                                        $password = $_POST["password"]; 
-                                        $birthday = $_POST["birthday"];  
-                                        $email = $_POST["email"]; 
-                                        $phone = $_POST["phone"]; 
-                                        $about = $_POST["about"]; 
-                                        $permission = 1;
-                                        $sql1 = "INSERT INTO account (account_id, password, email,birthday,phonenumber,about,permission) 
-                                        VALUES ('$id', '$password','$email', '$birthday',$phone,$about,$permission)";
-                                        if ($conn->query($sql1) === TRUE)
-                                        {
-                                            echo "Add sucessful";
-                                        }
-                                        else
-                                        {
-
-                                            echo "Add fail";
-                                        }
-                                        
-
-                                    }
-                                    ?>
                         <h1>Register</h1>
-                        <form>
+                   
+                        <form action="validate.php" method="post">
                             <div class="form-row py-1 pt-1">
                                 <div class="text-start offset-3">
                                     <h5>Username</h5> 
-                                </div>
+                                    <h6><?php echo $username_error; ?></p></h6>
+                            </div>
                             </div>
                             <div class="form-row py-1 pt-1">
                             <div class="offset-1 col-lg-10">
-                                <input type="text" id="id" class="input-register px-3" placeholder="E.g. Phan Minh Thong">
+                                <input type="text" name="id" class="input-register px-3" placeholder="E.g. Phan Minh Thong">
                             </div>
+                         
                             </div>
-                            <div class="form-row py-2 pt-3">
+                            <div class="form-row py-1 pt-2">
                                 <div class="text-start offset-3">
                                     <h5>Password</h5> 
+                                    <h6><?php echo $password_error; ?></p></h6>
                                 </div>
                             </div>
 
                           
                             <div class="form-row py-1 pt-1">
                                 <div class="offset-1 col-lg-10">
-                                    <input type="password" id="password" class="input-register px-3" placeholder="at least 8 letter or number">
+                                    <input type="password" name="password" class="input-register px-3" placeholder="at least 8 letter or number">
                                 </div>
                             </div>
-                            <div class="form-row py-2 pt-3">
+                            <div class="form-row py-1 pt-2">
                                 <div class="text-start offset-3">
                                     <h5>Repeat Password</h5> 
+                                    <h6><?php echo $rp_password_error; ?></p></h6>
                                 </div>
                             </div>
                             <div class="form-row py-1 pt-1">
                             <div class="offset-1 col-lg-10">
-                                <input type="password" id="password_rp" class="input-register px-3" placeholder="same as Password">
+                                <input type="password" name="password_rp" class="input-register px-3" placeholder="same as Password">
                               </div>
                             </div>
-                            <div class="form-row py-2 pt-3">
+                            <div class="form-row py-1 pt-2">
                                 <div class="text-start offset-3">
                                     <h5>Birthday</h5> 
+                                    <h6><?php echo $birthday_error; ?></p></h6>
                                 </div>
                             </div>
                             <div class="form-row py-1 pt-1">
                                 <div class="offset-1 col-lg-10">                                                                       
-                                    <div class='input-group date text-start offset-2' id='datepicker'>
+                                    <div class='input-group date text-start offset-2' name='datepicker'>
                                         
                                         
                                         <div class="input-group-addon text-center">
-                                            <input type='text' id="birthday" class="input-register px-3" placeholder="dd/mm/yyyy">
+                                            <input type='text' name="birthday" class="input-register px-3" placeholder="dd/mm/yyyy">
                                             <div class="glyphicon"></div>
                                         </div>
                                     
                                     </div>                                                        
                                 </div>
                             </div>
-                            <div class="form-row py-2 pt-3">
+                            <div class="form-row py-1 pt-2">
                                 <div class="text-start offset-3">
                                     <h5>Email</h5> 
+                                    <h6><?php echo $email_error; ?></p></h6>
                                 </div>
                             </div>
                             <div class="form-row py-1 pt-1">
                                 <div class="offset-1 col-lg-10">
-                                    <input type="text" id="email" class="input-register px-3" placeholder="E.g. thongphan@gmail.com">
+                                    <input type="text" name="email" class="input-register px-3" placeholder="E.g. thongphan@gmail.com">
                                 </div>
                             </div>
-                            <div class="form-row py-2 pt-3">
+                            <div class="form-row py-1 pt-2">
                                 <div class="text-start offset-3">
                                     <h5>Phone Number</h5> 
+                                    <h6><?php echo $phone_error; ?></p></h6>
                                 </div>
                             </div>
                             <div class="form-row py-1 pt-1">
                                 <div class="offset-1 col-lg-10">
-                                    <input type="text" id="phone" class="input-register px-3" placeholder="E.g. 0912345678">
+                                    <input type="text" name="phone" class="input-register px-3" placeholder="E.g. 0912345678">
                                 </div>
                             </div>
-                            <div class="form-row py-2 pt-3">
+                            <div class="form-row py-1 pt-2">
                                 <div class="text-start offset-3">
                                     <h5>About</h5> 
                                 </div>
                             </div>
                             <div class="form-row py-1 pt-1">
                                 <div class="about offset-1 col-lg-10">
-                                    <textarea id="about"  class="input-register-about px-3" placeholder="E.g. I like action game"></textarea>
+                                    <textarea name="about"  class="input-register-about px-3" placeholder="E.g. I like action game"></textarea>
                                 </div>
                             </div>
-                            <div class="form-row py-3 pt-3  ">
+                            <div class="form-row py-3 pt-2  ">
                                 <div class="offset-1 col-lg-10">
                                 
-                                    <input type="submit" name="register-btn" class="register-btn" value="Register" />
+                                    <input type="submit" class="register-btn" value="Register" />
                                     
                                     
                                 </div>
