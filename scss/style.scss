@@ -1,0 +1,21 @@
+@use 'custom';
+
+// IMPORT THE COMPONENTS
+
+@use 'components/button';
+@use 'components/mixins';
+@use 'components/typography';
+@use 'components/modal';
+
+// IMPORT THE SECTIONS
+
+@use 'mainPage-section/navbar';
+@use 'mainPage-section/about';
+@use 'mainPage-section/games';
+@use 'mainPage-section/news';
+@use 'mainPage-section/contact';
+@use 'mainPage-section/services';
+@use 'mainPage-section/cart';
+@use 'store-section/products';
+@use './gameInfo-section/game-info';
+@use './newInfo-section/newInfo-section';
