@@ -38,7 +38,7 @@
                     <div class="col-lg-12 text-center py-5">
                         <h1>Register</h1>
                    
-                        <form action="validate.php" method="post">
+                        <form action="validate-register.php" method="post">
                             <div class="form-row py-1 pt-1">
                                 <div class="text-start offset-3">
                                     <h5>Username</h5> 

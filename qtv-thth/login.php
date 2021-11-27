@@ -24,23 +24,23 @@
 
                     <div class="col-lg-7 text-center py-5">
                         <h1 class="animate__animated animate__pulse">THTH Entertainment</h1>
-                        <form>
+                        <form action="validate-login.php" method="post">
                           <div class="form-row py-4 pt-5">
                             <div class="offset-1 col-lg-10">
-                                <input type="text" class="input-login px-3" placeholder="Username">
+                                <input type="text" name="id" class="input-login px-3" placeholder="Username">
 
                             </div>
 
                           </div>
                           <div class="form-row py-2 pt-3">
                             <div class="offset-1 col-lg-10">
-                                <input type="password" class="input-login px-3" placeholder="Password">
+                                <input type="password" name="password" class="input-login px-3" placeholder="Password">
 
                           </div>
                         </div>
                           <div class="form-row py-2 pt-1">
                             <div class="offset-1 col-lg-10">
-                                <h5>Don't have acount yet ? <a href="url">Register</a></h5> 
+                                <h5>Don't have acount yet ? <a href="./register.php">Register</a></h5> 
                           </div>
                            </div>
                           <div class="form-row py-3 pt-3  ">
