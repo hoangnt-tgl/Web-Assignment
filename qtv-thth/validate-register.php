@@ -2,7 +2,7 @@
                   
                  
                       session_start(); 
-                      $_SESSION['error'] = "213";
+                    
                       $error_fullname="";
                       $servername = "localhost";
                       $username = "root";
@@ -19,13 +19,13 @@
                       $email = $_POST["email"]; 
                       $phone = $_POST["phone"]; 
                       $about = $_POST["about"]; 
-                      $permission = 1;
+                      $permission = 0;
                       $sql1 = "INSERT INTO account (account_id, password, email,birthday,phonenumber,about,permission) 
                       VALUES ('$id', '$password','$email', '$birthday',$phone,$about,$permission)";
                       if ($conn->query($sql1) === TRUE)
                       {
                         echo "Add sucessful";
-                        header('location:login.html');
+                        header('location:login.php');
                           
                       }
                       else
