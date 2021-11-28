@@ -86,12 +86,19 @@
     font-weight: bold;
     border: none;
   }
-.table tbody {
-    display:block;
-    height: 400px;
-    overflow-y: auto;
-    /* float: left; */
-  }
+
+.user-table
+{
+  display:block;
+  height: 450px;
+  overflow-y: auto;
+}
+.product-table
+{
+  display:block;
+  height: 350px;
+  overflow-y: auto;
+}
 .table tr{
   display:block;
   float: left;
@@ -120,4 +127,66 @@
     #wrapper.toggled #sidebar-wrapper {
       margin-left: -15rem;
     }
+  }
+
+  table .email
+  {
+    width:350px;
+  }
+  table .phone
+  {
+    width:150px;
+  }
+  table .status
+  {
+    width:100px;
+  }
+  button:hover{
+    background: #334780;
+}
+  .user-btn{
+    height: 30px;
+    width: 90px;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 14px;
+    background: #334756;
+    color: #F0A500;
+  }
+  .product-btn{
+    height: 30px;
+    width: 130px;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 14px;
+    background: #334756;
+    color: #F0A500;
+  }
+  .add-btn{
+    height: 50px;
+    width: 160px;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 14px;
+    background: #334756;
+    color: #F0A500;
+    margin-left: 470px;
+  }
+  .view-btn{
+    height: 50px;
+    width: 160px;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 14px;
+    background: #334756;
+    color: #F0A500;
+    margin-left: 30px;
   }
