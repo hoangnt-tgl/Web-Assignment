@@ -63,26 +63,108 @@
                     </div>
                     <h3 class="fs-4 mb-3" style="float: left;">Current News</h3>
                     <button class="view-modal" >Add News</button>
+                    <button class='view-btn'>View Main Web</button>
                     <br><br>
                     <div id="page-content-wrapper-new">  
                         <ul id="item">
-                        <di class="myItem">
-                        <h3>Item 1</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, nostrum blanditiis ducimus distinctio dolorem, voluptatum ab, cumque iure minus aperiam incidunt ea modi. Tempora iure ad maxime nulla nemo illum?</p>
-                                                </di>
-                        <di class="myItem">
-                        <h3>Item 2</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, nostrum blanditiis ducimus distinctio dolorem, voluptatum ab, cumque iure minus aperiam incidunt ea modi. Tempora iure ad maxime nulla nemo illum?</p>
-                                                </di>
+                        <?php
+                                        $servername = "localhost";
+                                        $username = "root";
+                                        $password = "";
+                                        $dbname = "thth_company";
+                                        $conn = new mysqli($servername, $username, $password, $dbname);
+                                        if ($conn->connect_error) {
+                                            echo "connect fail";
+                                            die("Connection failed: " . $conn->connect_error);
+                                            }
+                                        $sql = "SELECT * from news";
+                                        $result = mysqli_query($conn,$sql);
+                                        if ($result->num_rows > 0)
+                                        {
+                                            
+                                            while($row = $result ->fetch_assoc())
+                                            {
+                                                
+                                                   
+                                                    echo "<di class='myItem'>";
+                                                    echo "<h3>". $row['title']."</h3>";
+                                                    echo "<p> ". $row['description']."</p>";
+                                                    echo "</di>";
+                                                
+                                                                                                
+                                            }
+                                        }
+                                        
+                                    ?>
+                        
+                       
                         
                 </ul>
 
                                 </div>
                                 </div>
+
+                                <div class="popup">
+    <header>
+      <span>Add News</span>
+      <div class="close"><i class="fas fa-times-circle"></i></div>
+    </header>
+    <div class="content">
+      
+      <div class="field">
+    <form action="product.php" method = "POST">
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Title</h5>  
+                <input  type="text" name="id-product" class="input-admin-product px-3" >           
+            </div>
+        </div>
+       
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Image</h5>  
+                <input  type="text" name="image-product" class="input-admin-product px-3" >           
+            </div>
+        
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Description</h5>  
+                <textarea name="des-product"  class="input-register-about px-3" placeholder="E.g. I like action game"></textarea>
+                                         
+            </div>
+        </div>
+        
+        
+        <div class="form-row py-1 pt-1">
+        <div class="offset-3 col-lg-10">                
+        <input type="submit" name ="save" class="add-btn text-center" value="Add News" />                                                            
+        </div>                                  
+        </div>
+    </form>
+        
+      </div>
+    </div>
+  </div>
                                 <script>
                                         var Item = document.getElementById("item");
                                         Item.style.display= "grid";
                                 </script>
+                                <script>
+    const viewBtn = document.querySelector(".view-modal"),
+    popup = document.querySelector(".popup"),
+    close = popup.querySelector(".close"),
+    field = popup.querySelector(".field");
+    viewBtn.onclick = ()=>{
+      popup.classList.toggle("show");
+    }
+    close.onclick = ()=>{
+      viewBtn.click();
+
+    
+    }
+    
+  
+  </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

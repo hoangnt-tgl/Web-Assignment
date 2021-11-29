@@ -4,7 +4,7 @@
                       session_start(); 
             
                       $error_fullname="";
-                      $servername = "localhost:3307";
+                      $servername = "localhost";
                       $username = "root";
                       $password = "";
                       $dbname = "thth_company";
@@ -26,10 +26,8 @@
                             header('location:admin-dashboard.php');
                         }
                         else
-                        {
-                          header("location:index.php");
-                          $_SESSION['username'] = $id;
-                        }
+                        { $_SESSION['username'] = $id;
+                          header('location:index.php');}
                         
                           
                       }

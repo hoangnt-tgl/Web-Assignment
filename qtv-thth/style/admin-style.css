@@ -77,8 +77,8 @@
  
   }
   di p{
-    width: 800px;
-    height: 100px;
+    width: 900px;
+    height: 200px;
   }
   #wrapper.toggled #sidebar-wrapper {
     margin-left: 0;

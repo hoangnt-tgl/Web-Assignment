@@ -120,7 +120,9 @@
                                                     echo "<td scope='col' class='phone'>". $row['phonenumber']."</th>";
                                                     echo "<td scope='col' class='productb'>". $amount."</th>";
                                                     echo "<td scope='col' class='status'>". $status."</th>";
-                                                    echo "<td scope='col'><button class='user-btn'>".$ban_btn."</button></th>";
+                                                    ?>
+                                                    <td scope='col' class='recom'><a href="user.php?delete=<?php echo $row['account_id'];?>" class ="btn btn-danger"><?php echo $ban_btn;?></a></td>
+                                                    <?php
                                                     echo "</tr>";   
                                                 }
                                                                                                 

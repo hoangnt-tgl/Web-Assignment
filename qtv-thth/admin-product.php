@@ -24,7 +24,7 @@
         }
         else
         {
-            echo '<script>alert("Add Fail")</script>';
+             
         }
         unset($_SESSION['add']);
     }
@@ -114,7 +114,7 @@
                                         <th scope="col" class="sale">Sale</th>
                                         <th scope="col" class="rate">Favourite</th>
                                         <th scope="col" class="quan">Quantity</th>
-                                        <th scope="col" class="recom">Required Configuration</th>
+                                        <th scope="col" class="recom"></th>
                                         
                                     </tr>
                                 </thead>
@@ -142,7 +142,10 @@
                                                     echo "<td scope='col' class='sale'>".  $amount."</td>";
                                                     echo "<td scope='col' class='rate'>". $row['rating']."</td>";
                                                     echo "<td scope='col' class='quan'>". $row['quantity']."</td>";
-                                                    echo "<td scope='col' class='recom'><a href='product.php?delete=<?php echo $product_id;?>' class ='btn btn-danger'>Delete</a>'</td>";
+                                                    ?>
+
+                                                    <td scope='col' class='recom'><a href="product.php?delete=<?php echo $row['product_id'];?>" class ="btn btn-danger">Delete</a></td>
+                                                    <?php
                                                     echo "</tr>";   
                                                 }
                                                                                                 

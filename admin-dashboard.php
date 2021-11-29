@@ -18,15 +18,15 @@
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                     class="fas fa-user-secret me-2"></i>THTH</div>
             <div class="list-group list-group-flush my-3">
-                <a href="./admin-dashboard.html" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                <a href="./admin-dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="./admin-user.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="./admin-user.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-users me-2"></i>User</a>
-                <a href="./admin-new.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="./admin-new.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-newspaper me-2"></i>New</a>
-                <a href="./admin-product.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="./admin-product.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-gamepad me-2"></i>Products</a>
-                <a href="./login.html" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                <a href="./login.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
@@ -36,36 +36,7 @@
         <div id="page-content-wrapper">        
             <div class="container-fluid px-4">
                 <div class="row g-3 my-2">
-                    <div class="col-md-3">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">720</h3>
-                                <p class="fs-5">Products</p>
-                            </div>
-                            <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">4920</h3>
-                                <p class="fs-5">Sales</p>
-                            </div>
-                            <i
-                                class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">3899</h3>
-                                <p class="fs-5">Delivery</p>
-                            </div>
-                            <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
+                    
 
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
@@ -77,17 +48,17 @@
                         </div>
                     </div>
                 </div>
-
+                <button class="view-btn" onclick="sortTable()">Sort</button>
                 <div class="row my-5">
                 
-                        <h3 class="fs-4 mb-3" style="float: left;">Top Most Sell In Month</h3>
+                        <h3 class="fs-4 mb-3" style="float: left;">Top Most Sell </h3>
                         
                     
                     <div class="col">
                         <table class="table bg-white rounded shadow-sm  table-hover" id="table-dashboard">
                             <thead>
                                 <tr>
-                                    <th scope="col" width="50">#</th>
+                                    <!-- <th scope="col" width="50">#</th> -->
                                     <th scope="col">Product</th>
                                     <th scope="col">Amount</th>
                                     <th scope="col">Favorite</th>
@@ -95,78 +66,42 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Television</td>
-                                    <td>Jonny</td>
-                                    <td>$1200</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Laptop</td>
-                                    <td>Kenny</td>
-                                    <td>$750</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Cell Phone</td>
-                                    <td>Jenny</td>
-                                    <td>$600</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Fridge</td>
-                                    <td>Killy</td>
-                                    <td>$300</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Books</td>
-                                    <td>Filly</td>
-                                    <td>$120</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td>Gold</td>
-                                    <td>Bumbo</td>
-                                    <td>$1800</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">7</th>
-                                    <td>Pen</td>
-                                    <td>Bilbo</td>
-                                    <td>$75</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">8</th>
-                                    <td>Notebook</td>
-                                    <td>Frodo</td>
-                                    <td>$36</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">9</th>
-                                    <td>Dress</td>
-                                    <td>Kimo</td>
-                                    <td>$255</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">10</th>
-                                    <td>Paint</td>
-                                    <td>Zico</td>
-                                    <td>$434</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">11</th>
-                                    <td>Carpet</td>
-                                    <td>Jeco</td>
-                                    <td>$1236</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">12</th>
-                                    <td>Food</td>
-                                    <td>Haso</td>
-                                    <td>$422</td>
-                                </tr>
+                            <?php
+                                        $servername = "localhost";
+                                        $username = "root";
+                                        $password = "";
+                                        $dbname = "thth_company";
+                                        $conn = new mysqli($servername, $username, $password, $dbname);
+                                        if ($conn->connect_error) {
+                                            echo "connect fail";
+                                            die("Connection failed: " . $conn->connect_error);
+                                            }
+                                        $sql = "SELECT * from product";
+                                        $result = mysqli_query($conn,$sql);
+                                        if ($result->num_rows > 0)
+                                        {
+                                            
+                                            while($row = $result ->fetch_assoc())
+                                            {
+                                                $product_id = $row['product_id'];
+                                                $sql2 = "SELECT * from productbuy WHERE product_id = '$product_id'";
+                                                $result2 = mysqli_query($conn,$sql2); 
+                                                $amount = mysqli_num_rows($result2);
+
+                                            
+                                                echo "<tr>";
+                                                // echo "<td scope='col' >". $row['product_id']."</td>";
+                                                echo "<td scope='col' class='productname'>". $row['name']."</td>";
+                                                echo "<td scope='col' class='price'>".  $amount."</td>";
+                                                echo "<td scope='col' class='sale'>". $row['rating']."</td>";
+                                                echo "<td scope='col' class='rate'>". $amount * $row['price']." $</td>";
+                                                
+                                                echo "</tr>";   
+                                                                                                
+                                            }
+                                        }
+                                        
+                                    ?>
                             </tbody>
                         </table>
                     </div>
@@ -177,7 +112,48 @@
     </div>
     <!-- /#page-content-wrapper -->
     </div>
+    <script>
+        function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("table-dashboard");
+  switching = true;
+  dir = "asc"; 
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[2];
+      y = rows[i + 1].getElementsByTagName("TD")[2];
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+        
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
 
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+  
+      switchcount ++;      
+    } else {
+
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         var el = document.getElementById("wrapper");
