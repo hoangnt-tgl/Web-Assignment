@@ -12,6 +12,23 @@
 </head>
 
 <body>
+
+    <?php require_once 'product.php '?>
+    <?php
+   
+    if (isset($_SESSION['add']))
+    {
+        if ( $_SESSION['add'] == '1')
+        {
+            echo '<script>alert("Add Success")</script>';
+        }
+        else
+        {
+            echo '<script>alert("Add Fail")</script>';
+        }
+        unset($_SESSION['add']);
+    }
+    ?>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-task-bar" id="sidebar-wrapper">
@@ -81,14 +98,14 @@
                         <div class= "search-row">
                             <h3 class="fs-4 mb-3" style="float: left;">Recent Orders</h3>
                             <input id = "product-search" type="text" placeholder="Search product name" class="search-control">
-                            <button class='add-btn'>Add Product</button>
+                            <button class="view-modal" >Add Product</button>
                             <button class='view-btn'>View Main Web</button>
                             
                         
                         <div class="col">
                        
                         <br><br>
-                            <table class="table bg-white rounded shadow-sm  table-hover">
+                            <table id ="ptable"class="table bg-white rounded shadow-sm  table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col" >ID</th>
@@ -125,7 +142,7 @@
                                                     echo "<td scope='col' class='sale'>".  $amount."</td>";
                                                     echo "<td scope='col' class='rate'>". $row['rating']."</td>";
                                                     echo "<td scope='col' class='quan'>". $row['quantity']."</td>";
-                                                    echo "<td scope='col' class='recom'><button class='product-btn'>View and Edit</button></td>";
+                                                    echo "<td scope='col' class='recom'><a href='product.php?delete=<?php echo $product_id;?>' class ='btn btn-danger'>Delete</a>'</td>";
                                                     echo "</tr>";   
                                                 }
                                                                                                 
@@ -144,6 +161,114 @@
         </div>
         <!-- /#page-content-wrapper -->
         </div>
+        
+  <div class="popup">
+    <header>
+      <span>Add New Product</span>
+      <div class="close"><i class="fas fa-times-circle"></i></div>
+    </header>
+    <div class="content">
+      
+      <div class="field">
+    <form action="product.php" method = "POST">
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">ID</h5>  
+                <input  type="text" name="id-product" class="input-admin-product px-3" >           
+            </div>
+        </div>
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Name</h5>  
+                <input  type="text" name="name-product" class="input-admin-product px-3" >           
+            </div>
+        </div>
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Price</h5>  
+                <input  type="text" name="price-product" class="input-admin-product px-3" >           
+            </div>
+        </div>
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Image</h5>  
+                <input  type="text" name="image-product" class="input-admin-product px-3" >           
+            </div>
+        </div>
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Quantity</h5>  
+                <input  type="text" name="quantity-product" class="input-admin-product px-3" >           
+            </div>
+        </div>
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Description</h5>  
+                <textarea name="des-product"  class="input-register-about px-3" placeholder="E.g. I like action game"></textarea>
+                                         
+            </div>
+        </div>
+        
+        <div class="form-row py-1 pt-1">
+        <label >OS:</label>
+            <select name="os" >
+                <option value="volvo">Windows 7</option>
+                <option value="saab">Windows 10</option>
+             
+            </select>
+            <label >Processor:</label>
+            <select name="pro" >
+                <option value="volvo">Intel Core i3-530</option>
+                <option value="saab">Intel Core i7</option>
+             </select>
+            
+        </div>
+        <div class="form-row py-1 pt-1">
+        <label >Memmory:</label>
+            <select name="mem" >
+                <option value="volvo">4</option>
+               <option value="saab">8</option> 
+            </select>
+            <label >Storage  :</label>
+            <select name="sto" >
+                <option value="volvo">3</option>
+                <option value="saab">4</option>
+               
+             </select>
+        </div>
+        <div class="form-row py-1 pt-1">
+            <label >Graphic:</label>
+            <select name="gra" >
+                <option value="volvo">NVIDIA GeForce GTX 260 / ATI Radeon HD 4870</option>
+                <option value="saab">NVIDIA GeForce GTX 260 / ATI Radeon HD 4870</option>
+             </select>
+        </div>
+        <div class="form-row py-1 pt-1">
+        <div class="offset-3 col-lg-10">                
+        <input type="submit" name ="save" class="add-btn text-center" value="AddProduct" />                                                            
+        </div>                                  
+        </div>
+    </form>
+        
+      </div>
+    </div>
+  </div>
+  <script>
+    const viewBtn = document.querySelector(".view-modal"),
+    popup = document.querySelector(".popup"),
+    close = popup.querySelector(".close"),
+    field = popup.querySelector(".field");
+    viewBtn.onclick = ()=>{
+      popup.classList.toggle("show");
+    }
+    close.onclick = ()=>{
+      viewBtn.click();
+
+    
+    }
+    
+  
+  </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

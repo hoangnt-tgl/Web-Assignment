@@ -21,7 +21,7 @@
                       $about = $_POST["about"]; 
                       $permission = 0;
                       $sql1 = "INSERT INTO account (account_id, password, email,birthday,phonenumber,about,permission) 
-                      VALUES ('$id', '$password','$email', '$birthday',$phone,$about,$permission)";
+                      VALUES ('$id', '$password','$email', '$birthday','$phone','$about','$permission')";
                       if ($conn->query($sql1) === TRUE)
                       {
                         echo "Add sucessful";

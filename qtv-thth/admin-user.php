@@ -33,13 +33,42 @@
         </div>
         <div id="page-content-wrapper">        
                 <div class="container-fluid px-4">
-                    
+                <div class="row g-3 my-2">
+                        <div class="col-md-3">
+                            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                                <div>
+                                    
+                                    <?php
+                                    $servername = "localhost";
+                                    $username = "root";
+                                    $password = "";
+                                    $dbname = "thth_company";
+                                    $conn = new mysqli($servername, $username, $password, $dbname);
+                                    if ($conn->connect_error) {
+                                        echo "connect fail";
+                                        die("Connection failed: " . $conn->connect_error);
+                                        }
+                                  
+                                        $sql1 = "SELECT * from account ";
+                                        $result1 = mysqli_query($conn,$sql1); 
+                                        $amount1 = mysqli_num_rows($result1) - 1;
+                                        echo '<h3 class="fs-2">'.$amount1.'</h3>';
+                                    ?>
+                                    <p class="fs-5">Total Account</p>
+                                </div>
+                                <i class="fas fa-user-circle fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            </div>
+                        </div>
+    
+                       
+                    </div>
     
                     <div class="row my-5">
-                        <h3 class="fs-4 mb-3">Recent Orders</h3>
-                        
+                    <div class= "search-row">
+                        <h3 class="fs-4 mb-3" style="float:left;" >Recent Orders</h3>
+                        <input  type="text" placeholder="Search product name" class="search-control">
                         <div class="col">
-                        <input id = "product-search" type="text" placeholder="Search product name" class="search-control">
+                        
                         <br><br>
                             <table class="table bg-white rounded shadow-sm  table-hover">
                                 <thead>
@@ -103,12 +132,14 @@
                             </table>
                         </div>
                     
-    
+                        </div>                 
                 </div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
+
     </div>
+    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
