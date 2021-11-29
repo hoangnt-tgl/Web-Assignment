@@ -93,4 +93,3 @@ if (!empty($_POST['changePass'])){
     execute($sql);
     header('Location: ./edit-profile.php');
 }
-?>
