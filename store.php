@@ -34,9 +34,9 @@ require_once('config.php');
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Store</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">About</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="./news.php">News</a>
                     </li>
@@ -45,34 +45,6 @@ require_once('config.php');
                     </li>
                 </ul>
 
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Giỏ Hàng</h5>
-                            <span class="close">&times;</span>
-                        </div>
-                        <div class="modal-body">
-                            <div class="cart-row">
-                                <span class="cart-item cart-header cart-column">Sản Phẩm</span>
-                                <span class="cart-price cart-header cart-column">Giá</span>
-                                <span class="cart-quantity cart-header cart-column">Số Lượng</span>
-                            </div>
-                            <div class="cart-items">
-
-                            </div>
-                            <div class="cart-total">
-                                <strong class="cart-total-title">Tổng Cộng:</strong>
-                                <span class="cart-total-price">0$</span>
-                            </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-rounded close-footer">Đóng</button>
-                            <button type="button" class="btn btn-rounded order">Thanh Toán</button>
-                        </div>
-                    </div>
-                </div>
                 <?php
                 require_once('check_login.php');
                 ?>
@@ -93,7 +65,7 @@ require_once('config.php');
                     <div class="col-md-6 col-lg-3 col-sm-12 game-container pb-3">
                     <div class="container">
                         <div class="img-container text-center">
-                            <img src="./images/'.$std['image'].'" alt="game-image">
+                            <img src="./images/' . $std['image'] . '" alt="game-image">
                             <button type="button" class="rounded-pill btn-rounded mb-3">
                                 <a href="./game_info.php?id=' . $std['product_id'] . '">Learn More</a>
                                 <i class="fas fa-arrow-right"></i>
@@ -101,8 +73,8 @@ require_once('config.php');
                             </button>
                         </div>
                         <div class="game-info">
-                            <p class="fw-bold mb-0">God of Wars</p>
-                            <p class="info">'.substr($std['description'], 0, 50).'...</p>
+                            <p class="fw-bold mb-0 align-middle" style="height: 50px">' . substr($std['name'], 0, 50) . '</p>
+                            <p class="info ">' . substr($std['description'], 0, 50) . '...</p>
                         </div>
                         <div class="price text-end">
                             <h2>$' . $std['price'] . '</h2>
@@ -113,10 +85,10 @@ require_once('config.php');
                 }
                 ?>
             </div>
-            <button type="button" class="rounded-pill btn-rounded bg-primary">Load more
+            <!-- <button type="button" class="rounded-pill btn-rounded bg-primary">Load more
                 <i class="fas fa-arrow-right"></i>
                 </span>
-            </button>
+            </button> -->
         </div>
     </section>
 
@@ -124,7 +96,7 @@ require_once('config.php');
 
     <footer class="footer">
         <div class="container">
-            <div class="row">
+            <div class="row m-3">
                 <!-- MOBILE NUMBER -->
                 <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
                     <div class="contact-box__icon">
@@ -170,9 +142,6 @@ require_once('config.php');
             </div>
         </div>
 
-
-
-
         <!-- SOCIAL MEDIA -->
         <div class="footer-sm" style="background-color: #212121;">
             <div class="container">
@@ -181,10 +150,10 @@ require_once('config.php');
                         connect with us on social media
                     </div>
                     <div class="col-lg-7 col-md-6">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook icon"></i></a>
+                        <a href="#"><i class="fab fa-twitter icon"></i></a>
+                        <a href="#"><i class="fab fa-github icon"></i></a>
+                        <a href="#"><i class="fab fa-instagram icon"></i></a>
                     </div>
                 </div>
             </div>
@@ -192,7 +161,7 @@ require_once('config.php');
 
         <!-- COMPANY INFO -->
         <div class="container mt-5">
-            <div class="row text-white justify-content-center mt-3 pb-3">
+            <div class="row text-white justify-content-center m-3 pb-3">
                 <div class="col-12 col-sm-6 col-lg-6 mx-auto">
                     <h5 class="text-capitalize fw-bold">thth</h5>
                     <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
@@ -217,7 +186,7 @@ require_once('config.php');
                     <ul class="list-inline company-list">
                         <li><a href="#">Your Account</a></li>
                         <li><a href="#">Create an account</a></li>
-                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Store</a></li>
                         <li><a href="#">Help</a></li>
                     </ul>
                 </div>
@@ -225,10 +194,10 @@ require_once('config.php');
                     <h5 class="text-capitalize fw-bold">contact</h5>
                     <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
                     <ul class="list-inline company-list">
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter/a></li>
+                        <li><a href="#">Github</a></li>
                     </ul>
                 </div>
             </div>

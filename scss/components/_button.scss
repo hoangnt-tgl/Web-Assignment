@@ -28,8 +28,8 @@
     }
 
     &:hover {
-        @include gradient;
-        color: $white;
+        @include gray_gradient;
+        color: $primary;
 
         span {
             background-color: rgba($black, 0.6);

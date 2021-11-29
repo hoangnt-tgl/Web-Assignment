@@ -1,8 +1,13 @@
 @use '../custom' as *;
 // GRADIENT MIXIN
-@mixin gradient {
+@mixin orange_gradient {
     background: linear-gradient(to right, rgba($primary, 0.95), rgba($secondary, 0.95));
 }
+
+@mixin gray_gradient {
+    background: linear-gradient(to right, rgba($bluegray-light, 0.95), rgba($bluegray-dark, 0.95));
+}
+
 
 // ABSOLUTE CENTER 
 @mixin absoluteCenter {
