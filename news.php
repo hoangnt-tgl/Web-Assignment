@@ -81,10 +81,10 @@
                 }
                 ?>
             </div>
-            <button type="button" class="rounded-pill btn-rounded bg-primary">Load more
+            <!-- <button type="button" class="rounded-pill btn-rounded bg-primary">Load more
                 <i class="fas fa-arrow-right"></i>
                 </span>
-            </button>
+            </button> -->
         </div>
     </section>
 
