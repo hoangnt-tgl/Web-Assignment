@@ -340,7 +340,7 @@ session_start();
           <ul class="list-inline company-list">
             <li><a href="#">Facebook</a></li>
             <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter/a></li>
+            <li><a href="#">Twitter</a></li>
             <li><a href="#">Github</a></li>
           </ul>
         </div>
