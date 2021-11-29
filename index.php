@@ -64,7 +64,7 @@
                             impedit qui quibusdam dolores deserunt minus laudantium! Aut provident beatae ea hic
                             consequatur commodi, aliquam illum neque?</span>
                     </h1>
-                    <button type="button" class="rounded-pill btn-rounded">About Us
+                    <button type="button" class="rounded-pill btn-rounded" onclick="location.href='./contact.php'">About Us
                         <i class="fas fa-arrow-right"></i>
                         </span>
                     </button>
@@ -262,7 +262,7 @@
                     <ul class="list-inline company-list">
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Twitter/a></li>
                         <li><a href="#">Github</a></li>
                     </ul>
                 </div>

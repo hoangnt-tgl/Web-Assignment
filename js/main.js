@@ -79,6 +79,10 @@ function displayCart(){
     document.getElementsByClassName("cart-total-price")[0].innerHTML = total(cartItems);
 }
 function AddToCart(product_id){
+    if (localStorage.getItem("username") === ""){
+        window.location = "./game_info.php?id=" + product_id + "&error=notlogin";
+        return;
+    }
     var cartItems = [];
     if (localStorage.getItem("cartData") != null){
         cartItems = localStorage.getItem("cartData");

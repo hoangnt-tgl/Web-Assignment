@@ -12,7 +12,8 @@ session_start();
   <title>Profile</title>
   <link rel="stylesheet" href="./scss/style.css">
   <link rel="stylesheet" href="./scss/fontawesome.css">
-  <link rel="stylesheet" href="edit-profile.css">
+  <link rel="stylesheet" href="./scss/alert.css">
+  <link rel="stylesheet" href="./scss/edit-profile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -65,11 +66,10 @@ session_start();
                       <img src="./images/' . $std['image'] . '" alt="" width="32" height="32" class="rounded-circle me-2">
                       </span>
                       <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">Cart</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="./edit-profile.php">Profile</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="javascript:logout();">Sign out</a></li>
+                      <li><a class="dropdown-item" id="cart">Cart</a></li>
+                      <li><a class="dropdown-item" href="./edit-profile.php">Profile</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="./logout.php">Sign out</a></li>
                       </ul>
                     </div>
                     ';
@@ -100,7 +100,7 @@ session_start();
       $message = "Your Password Must Contain At Least 1 Letter!";
     }
     echo '
-        <div class="content">
+        <div class="contentalert">
           <div class="alert alert-warning rounded">
             <button type="button" class="close" data-dismis="alert" aria-hidden="true"> x </button>
             <strong>Alert!</strong> ' . $message . '
@@ -340,7 +340,7 @@ session_start();
           <ul class="list-inline company-list">
             <li><a href="#">Facebook</a></li>
             <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Twitter/a></li>
             <li><a href="#">Github</a></li>
           </ul>
         </div>
@@ -369,6 +369,7 @@ session_start();
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./js/main.js"></script>
   <?php
   echo '
     <script>

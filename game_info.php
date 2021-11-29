@@ -10,6 +10,7 @@ require_once('config.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THTH games store</title>
     <link rel="stylesheet" href="./scss/style.css">
+    <link rel="stylesheet" href="./scss/alert.css">
     <link rel="stylesheet" href="./scss/fontawesome.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +53,21 @@ require_once('config.php');
         </div>
     </nav>
 
-
+    <?php 
+    if (isset($_GET['error'])) {
+        $error = $_GET["error"];
+        if ($error === 'notlogin') {
+            echo '
+            <div class="contentalert">
+              <div class="alert alert-warning rounded">
+                <button type="button" class="close" data-dismis="alert" aria-hidden="true"> x </button>
+                <strong>Alert!</strong> Vui lòng đăng nhập
+              </div>
+            </div>
+            ';
+        } 
+      }
+    ?>
     <!-- GAME INFO SECTION  -->
 
     <section class="game-info">
@@ -340,7 +355,7 @@ require_once('config.php');
                     <ul class="list-inline company-list">
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Twitter/a></li>
                         <li><a href="#">Github</a></li>
                     </ul>
                 </div>
@@ -369,7 +384,13 @@ require_once('config.php');
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/main.js"></script>
+    <script>
+      $(".alert").click(function(){
+        $(this).fadeOut();
+      });
+    </script>
 </body>
 
 </html>

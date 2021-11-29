@@ -52,12 +52,14 @@
             </span>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                 <li><a class="dropdown-item" id="cart">Cart</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
                 <li><a class="dropdown-item" href="./edit-profile.php">Profile</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="./logout.php">Sign out</a></li>
             </ul>
             </div>
+            <script>
+                localStorage.setItem("username", "'.$username.'");
+            </script>
             ';
             $avatar = $std['image'];
     }
@@ -68,6 +70,9 @@
                 <i class="far fa-user"></i>
             </span>
         </button>
+        <script>
+            localStorage.setItem("username", "");
+        </script>
         ';
     }
     ?>

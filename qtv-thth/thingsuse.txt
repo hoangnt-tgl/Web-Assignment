@@ -1,3 +1,0 @@
-Bootstrap 5
-Animate.css
-google font

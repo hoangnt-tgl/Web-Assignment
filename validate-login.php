@@ -4,7 +4,8 @@
                       session_start(); 
             
                       $error_fullname="";
-                      $servername = "localhost";
+                      $servername = "localhost:3307";
+                      // $servername = "127.0.0.1";
                       $username = "root";
                       $password = "";
                       $dbname = "thth_company";
@@ -26,8 +27,10 @@
                             header('location:admin-dashboard.php');
                         }
                         else
-                        { $_SESSION['username'] = $id;
-                          header('location:index.php');}
+                        {
+                          header("location:index.php");
+                          $_SESSION['username'] = $id;
+                        }
                         
                           
                       }
@@ -38,7 +41,3 @@
                         header('location:login.php');
                           
                       }
-                      
-
-                  
-                  ?>

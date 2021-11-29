@@ -1,0 +1,29 @@
+.contentalert {
+    position: fixed;
+    right: 0;
+    z-index: 100;
+  }
+  .contentalert .close{
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    background: transparent;
+    -webkit-appearance: none;
+    padding-left: 20px;
+  }
+  .contentalert .close:hover, .close:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .contentalert .alert{
+    padding: 10px;
+  }

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THTH games store</title>
     <link rel="stylesheet" href="./scss/style.css">
+    <link rel="stylesheet" href="./scss/alert.css">
     <link rel="stylesheet" href="./scss/fontawesome.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +40,7 @@
                         <a class="nav-link" aria-current="page" href="./news.php">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Contact</a>
+                        <a class="nav-link" aria-current="page" href="./contact.php">Contact</a>
                     </li>
                 </ul>
                 <?php
@@ -48,7 +49,21 @@
             </div>
         </div>
     </nav>
-
+    <?php 
+    if (isset($_GET['error'])) {
+        $error = $_GET["error"];
+        if ($error === 'notlogin') {
+            echo '
+            <div class="contentalert">
+              <div class="alert alert-warning rounded">
+                <button type="button" class="close" data-dismis="alert" aria-hidden="true"> x </button>
+                <strong>Alert!</strong> Vui lòng đăng nhập để bình luận
+              </div>
+            </div>
+            ';
+        } 
+      }
+    ?>
     <!-- MAIN SECTION  -->
 
     <section class="main-section mt-3 mb-3">
@@ -89,7 +104,7 @@
                         foreach ($newsList as $std) {
                             echo '
                             <li>
-                                <a href="./new_info.php?id=' . $std['news_id'] . '">' . substr($std['title'], 0, 20) . '...</a>
+                                <a href="./new_info.php?id=' . $std['news_id'] . '">' . substr($std['title'], 0, 25) . '</a>
                             </li>
                             ';
                         }
@@ -116,7 +131,7 @@
                                     <img class="img-responsive" src="./images/' . $avatar . '" alt="">
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-9 col-lg-10">
-                                    <input type="hidden" value="' . $_GET['id'] . '" name="news_id">
+                                    <input type="hidden" value="' .$_GET['id']. '" name="news_id">
                                     <textarea class="form-control" placeholder="Your message" required name="message"></textarea>
                                 </div>
                             </div>
@@ -124,7 +139,7 @@
                         ?>
                     </form>
                     <?php
-                    $sql = 'select C.account_id, C.content, C.commentday, C.news_id, A.image FROM `comment` C INNER JOIN account A ON C.account_id = A.account_id WHERE C.news_id = ' . $_GET['id'] . ' ORDER BY C.commentday DESC';
+                    $sql = 'select C.account_id, C.content, C.commentday, C.news_id, A.image FROM `comment` C INNER JOIN account A ON C.account_id = A.account_id WHERE C.news_id = ' . $_GET['id']. ' ORDER BY C.commentday DESC';
                     $commentList = executeResult($sql);
                     echo '<h3>' . sizeof($commentList) . ' Comments</h3>';
                     foreach ($commentList as $std) {
@@ -252,7 +267,7 @@
                     <ul class="list-inline company-list">
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Twitter/a></li>
                         <li><a href="#">Github</a></li>
                     </ul>
                 </div>
@@ -278,10 +293,15 @@
     <a href="#" class="shadow btn-primary rounded-circle back-to-top">
         <i class="fas fa-chevron-up"></i>
     </a>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+            
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/main.js"></script>
+    <script>
+      $(".alert").click(function(){
+        $(this).fadeOut();
+      });
+    </script>
 
 </body>
 

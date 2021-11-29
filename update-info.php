@@ -56,6 +56,8 @@ if (!empty($_POST['changeInfo'])){
     
     $sql = "update account set account_id = '$account_id', fullname = '$fullname', `phonenumber` = '$phonenumber', `birthday` = '$birthday', email = '$email', about = '$about', image = '$image' where account_id = '$username'";
     execute($sql);
+    $sql = "update comment set account_id = '$account_id' where account_id = '$username'";
+    execute($sql);
     $_SESSION['username'] = $account_id;
     header('Location: ./edit-profile.php');
 }
@@ -93,3 +95,4 @@ if (!empty($_POST['changePass'])){
     execute($sql);
     header('Location: ./edit-profile.php');
 }
+?>
