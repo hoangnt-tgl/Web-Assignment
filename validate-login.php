@@ -4,7 +4,7 @@
                       session_start(); 
             
                       $error_fullname="";
-                      $servername = "localhost:3307";
+                      $servername = "127.0.0.1";
                       $username = "root";
                       $password = "";
                       $dbname = "thth_company";
@@ -40,7 +40,3 @@
                         header('location:login.php');
                           
                       }
-                      
-
-                  
-                  ?>

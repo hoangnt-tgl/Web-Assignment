@@ -1,6 +1,7 @@
 <?php
 
-define('HOST', 'localhost:3307');
+// define('HOST', 'localhost:3307');
+define('HOST', '127.0.0.1');
 define('DATABASE', 'thth_company');
 define('USERNAME', 'root');
 define('PASSWORD', '');
@@ -21,4 +22,3 @@ function executeResult($sql){
     mysqli_close($conn);
     return $list;
 }
-?>

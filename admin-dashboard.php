@@ -15,25 +15,19 @@
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-task-bar" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-user-secret me-2"></i>THTH</div>
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i class="fas fa-user-secret me-2"></i>THTH</div>
             <div class="list-group list-group-flush my-3">
-                <a href="./admin-dashboard.html" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                        class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="./admin-user.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-users me-2"></i>User</a>
-                <a href="./admin-new.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-newspaper me-2"></i>New</a>
-                <a href="./admin-product.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-gamepad me-2"></i>Products</a>
-                <a href="./login.html" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                        class="fas fa-power-off me-2"></i>Logout</a>
+                <a href="./admin-dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="./admin-user.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-users me-2"></i>User</a>
+                <a href="./admin-new.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-newspaper me-2"></i>New</a>
+                <a href="./admin-product.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-gamepad me-2"></i>Products</a>
+                <a href="./login.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">        
+        <div id="page-content-wrapper">
             <div class="container-fluid px-4">
                 <div class="row g-3 my-2">
                     <div class="col-md-3">
@@ -52,8 +46,7 @@
                                 <h3 class="fs-2">4920</h3>
                                 <p class="fs-5">Sales</p>
                             </div>
-                            <i
-                                class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
 
@@ -79,10 +72,10 @@
                 </div>
 
                 <div class="row my-5">
-                
-                        <h3 class="fs-4 mb-3" style="float: left;">Top Most Sell In Month</h3>
-                        
-                    
+
+                    <h3 class="fs-4 mb-3" style="float: left;">Top Most Sell In Month</h3>
+
+
                     <div class="col">
                         <table class="table bg-white rounded shadow-sm  table-hover" id="table-dashboard">
                             <thead>
@@ -183,7 +176,7 @@
         var el = document.getElementById("wrapper");
         var toggleButton = document.getElementById("menu-toggle");
 
-        toggleButton.onclick = function () {
+        toggleButton.onclick = function() {
             el.classList.toggle("toggled");
         };
     </script>

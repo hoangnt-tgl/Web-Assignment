@@ -32,9 +32,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="./store.php">Store</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">About</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="./news.php">News</a>
                     </li>
@@ -42,45 +42,9 @@
                         <a class="nav-link" aria-current="page" href="#">Contact</a>
                     </li>
                 </ul>
-                <!-- The Modal -->
-                <!-- The Modal -->
-                <button type="button" class="rounded-pill btn-rounded" id="cart"> Cart
-                    <span>
-                        <i class="fas fa-shopping-cart"></i>
-                    </span>
-                </button>
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Giỏ Hàng</h5>
-                            <span class="close">&times;</span>
-                        </div>
-                        <div class="modal-body">
-                            <div class="cart-row">
-                                <span class="cart-item cart-header cart-column">Sản Phẩm</span>
-                                <span class="cart-price cart-header cart-column">Giá</span>
-                                <span class="cart-quantity cart-header cart-column">Số Lượng</span>
-                            </div>
-                            <div class="cart-items">
-
-                            </div>
-                            <div class="cart-total">
-                                <strong class="cart-total-title">Tổng Cộng:</strong>
-                                <span class="cart-total-price">0$</span>
-                            </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-rounded close-footer">Đóng</button>
-                            <button type="button" class="btn btn-rounded order">Thanh Toán</button>
-                        </div>
-                    </div>
-                </div>
-                <button type="button" class="rounded-pill btn-rounded">Log In / Sign Up
-                    <span>
-                        <i class="far fa-user"></i>
-                    </span>
-                </button>
+                <?php
+                require_once('check_login.php');
+                ?>
             </div>
         </div>
     </nav>
@@ -90,52 +54,46 @@
     <section class="main-section mt-3 mb-3">
         <div class="container">
             <div class="row">
-                <?php 
+                <?php
                 require_once('config.php');
                 $news_id = $_GET['id'];
-                $sql = 'select * from `news` where `news_id` = '.$news_id.'';
+                $sql = 'select * from `news` where `news_id` = ' . $news_id . '';
                 $newsList = executeResult($sql);
                 foreach ($newsList as $std) {
                     echo '
                 <div class="newspaper col-lg-9 col-md-12 col-sm-12 p-4">
-                    <h1 class="title">'.$std['title'].'</h1>
+                    <h1 class="title">' . $std['title'] . '</h1>
                     <div class="date">
                         <i class="fas fa-calendar"></i>
-                        <span>'.$std['postday'].'</span>
+                        <span>' . $std['postday'] . '</span>
                     </div>
-                    <div class="summary text-gray mt-3">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sunt fugit ipsam, voluptatem
-                        ipsum
-                        consectetur tempore consequatur autem esse illum dolor ipsa explicabo veritatis nemo sed
-                        quisquam.
-                        Nobis aliquid cupiditate id explicabo veniam, molestiae ipsum officia magnam accusamus, magni
-                        porro
-                        consectetur modi. Ea, saepe culpa animi similique explicabo odit debitis.
+                    <div class="summary mt-3 text-center">
+                    <img class="w-75" src="./images/' . $std['image'] . '" >
                     </div>
-
                     <div class="body mt-5">
-                        '.$std['description'].'
+                        ' . $std['description'] . '
                     </div>
                 </div>
-                    ';}
+                    ';
+                }
                 ?>
-                
+
 
                 <div class="news col-lg-3 col-md-12 col-sm-12 p-4">
                     <h1>Tin nổi bật</h1>
                     <ul class=news-list>
-                        <li>
-                            <a href="#">Headlines</a>
-                        </li>
-                        <li>
-                            <a href="#">Headlines</a>
-                        </li>
-                        <li>
-                            <a href="#">Headlines</a>
-                        </li>
-                        <li>
-                            <a href="#">Headlines</a>
-                        </li>
+                        <?php
+                        $sql = 'select news_id, `title` from `news` ORDER BY postday DESC LIMIT 0, 5';
+                        $newsList = executeResult($sql);
+                        $count = 0;
+                        foreach ($newsList as $std) {
+                            echo '
+                            <li>
+                                <a href="./new_info.php?id=' . $std['news_id'] . '">' . substr($std['title'], 0, 20) . '...</a>
+                            </li>
+                            ';
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
@@ -147,34 +105,37 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
-                    <form>
+                    <form action="./comment.php" method="post">
                         <h3 class="pull-left">New Comment</h3>
-                        <button type="submit" class="btn btn-rounded rounded-pill pull-right">Submit</button>
+                        <?php
+                        echo '
+                        <input type="submit" class="btn btn-rounded rounded-pill pull-right" value="Submit" name="comment">
                         <fieldset>
                             <div class="row">
                                 <div class="ava col-sm-3 col-lg-2 hidden-xs">
-                                    <img class="img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                    <img class="img-responsive" src="./images/' . $avatar . '" alt="">
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-9 col-lg-10">
-                                    <textarea class="form-control" id="message" placeholder="Your message" required=""></textarea>
+                                    <input type="hidden" value="' . $std['news_id'] . '" name="news_id">
+                                    <textarea class="form-control" placeholder="Your message" required name="message"></textarea>
                                 </div>
                             </div>
-                        </fieldset>
+                        </fieldset>';
+                        ?>
                     </form>
                     <?php
-                    $sql = 'select C.account_id, C.content, C.commentday, C.news_id, A.image FROM `comment` C INNER JOIN account A ON C.account_id = A.account_id WHERE C.news_id = 1 ORDER BY C.commentday DESC';
+                    $sql = 'select C.account_id, C.content, C.commentday, C.news_id, A.image FROM `comment` C INNER JOIN account A ON C.account_id = A.account_id WHERE C.news_id = ' . $std['news_id'] . ' ORDER BY C.commentday DESC';
                     $commentList = executeResult($sql);
-                    echo '<h3>'.sizeof($commentList).' Comments</h3>';
-                    foreach($commentList as $std){
-                        $avatar;
-                        echo'
+                    echo '<h3>' . sizeof($commentList) . ' Comments</h3>';
+                    foreach ($commentList as $std) {
+                        echo '
                         <div class="media">
-                            <a class="pull-left" href="#"><img class="media-object" src="./images/'.$std['image'].'" alt=""></a>
+                            <a class="pull-left" href="#"><img class="media-object" src="./images/' . $std['image'] . '" alt=""></a>
                             <div class="media-body">
-                                <h4 class="media-heading">John Doe</h4>
-                                <p>'.$std['content'].'</p>
+                                <h4 class="media-heading">' . $std['account_id'] . '</h4>
+                                <p>' . $std['content'] . '</p>
                                 <ul class="list-unstyled list-inline media-detail pull-left">
-                                    <li><i class="fa fa-calendar"></i>'.$std['commentday'].'</li>
+                                    <li><i class="fa fa-calendar"></i>' . $std['commentday'] . '</li>
                                 </ul>
                             </div>
                         </div>
@@ -191,7 +152,7 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="row">
+            <div class="row m-3">
                 <!-- MOBILE NUMBER -->
                 <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
                     <div class="contact-box__icon">
@@ -245,10 +206,10 @@
                         connect with us on social media
                     </div>
                     <div class="col-lg-7 col-md-6">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook icon"></i></a>
+                        <a href="#"><i class="fab fa-twitter icon"></i></a>
+                        <a href="#"><i class="fab fa-github icon"></i></a>
+                        <a href="#"><i class="fab fa-instagram icon"></i></a>
                     </div>
                 </div>
             </div>
@@ -256,7 +217,7 @@
 
         <!-- COMPANY INFO -->
         <div class="container mt-5">
-            <div class="row text-white justify-content-center mt-3 pb-3">
+            <div class="row text-white justify-content-center m-3 pb-3">
                 <div class="col-12 col-sm-6 col-lg-6 mx-auto">
                     <h5 class="text-capitalize fw-bold">thth</h5>
                     <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
@@ -281,7 +242,7 @@
                     <ul class="list-inline company-list">
                         <li><a href="#">Your Account</a></li>
                         <li><a href="#">Create an account</a></li>
-                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Store</a></li>
                         <li><a href="#">Help</a></li>
                     </ul>
                 </div>
@@ -289,10 +250,10 @@
                     <h5 class="text-capitalize fw-bold">contact</h5>
                     <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
                     <ul class="list-inline company-list">
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter/a></li>
+                        <li><a href="#">Github</a></li>
                     </ul>
                 </div>
             </div>

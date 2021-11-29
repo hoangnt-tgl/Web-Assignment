@@ -32,9 +32,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="./store.php">Store</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">About</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="./news.php">News</a>
                     </li>
@@ -43,34 +43,6 @@
                     </li>
                 </ul>
 
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Giỏ Hàng</h5>
-                            <span class="close">&times;</span>
-                        </div>
-                        <div class="modal-body">
-                            <div class="cart-row">
-                                <span class="cart-item cart-header cart-column">Sản Phẩm</span>
-                                <span class="cart-price cart-header cart-column">Giá</span>
-                                <span class="cart-quantity cart-header cart-column">Số Lượng</span>
-                            </div>
-                            <div class="cart-items">
-
-                            </div>
-                            <div class="cart-total">
-                                <strong class="cart-total-title">Tổng Cộng:</strong>
-                                <span class="cart-total-price">0$</span>
-                            </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-rounded close-footer">Đóng</button>
-                            <button type="button" class="btn btn-rounded order">Thanh Toán</button>
-                        </div>
-                    </div>
-                </div>
                 <?php
                 require_once('check_login.php');
                 ?>
@@ -81,7 +53,7 @@
     <!-- ABOUT SECTION  -->
     <section id="home" class="about-section">
         <div class="container">
-            <div class="row align-items-center text-white">
+            <div class="row align-items-center text-white m-3">
                 <div class="col-md-6 about">
                     <h1 class="display-2">
                         <span class="display-2--intro">About Us</span>
@@ -99,7 +71,7 @@
                 </div>
                 <div class="col-md-6 about">
                     <div class="img-box">
-                        <img src="./images/Group Presentation_Monochromatic.png" alt="about us illustrator">
+                        <img src="./images/Group_Presentation_Monochromatic.png" alt="about us illustrator">
                     </div>
                 </div>
             </div>
@@ -114,7 +86,7 @@
     <!-- STORE, NEWS  -->
     <section id="services" class="services">
         <div class="container">
-            <div class="row text-center">
+            <div class="row text-center m-3">
                 <h1 class="display-3 fw-bold">Our Services</h1>
                 <div class="heading-line mb-1"></div>
             </div>
@@ -143,14 +115,12 @@
         <!-- SERVICES  -->
         <div class="container">
             <!-- SHOP CONTENT  -->
-            <div class="row">
+            <div class="row m-3">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
                     <div class="services__content">
                         <div class="icon d-block fas fa-store"></div>
                         <h3 class="display-3--title mt-1">Store</h3>
-                        <p class="lh-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magnam natus
-                            excepturi commodi nisi rerum molestiae qui at cum deserunt. Quas ab illum, cum laboriosam
-                            quia vel tempora qui? Esse!</p>
+                        <p class="lh-lg">Discover all of the best games at affordable prices</p>
                         <button type="button" class="rounded-pill btn-rounded border-primary" onclick="location.href='./store.php'">Go to store
                             <i class="fas fa-arrow-right"></i>
                             </span>
@@ -159,12 +129,12 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
                     <div class="services__pic">
-                        <img src="./images/Gaming _Isometric.png" alt="games store illustration" class="img-fuild">
+                        <img src="./images/Gaming_Isometric.png" alt="games store illustration" class="img-fuild">
                     </div>
                 </div>
             </div>
             <!-- NEWS CONTENT  -->
-            <div class="row">
+            <div class="row m-3">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-start">
                     <div class="services__pic">
                         <img src="./images/Online campaign_Isometric.png" alt="news-event illustration" class="img-fuild">
@@ -174,9 +144,7 @@
                     <div class="services__content">
                         <div class="icon d-block fas fa-newspaper"></div>
                         <h3 class="display-3--title mt-1">News - Events</h3>
-                        <p class="lh-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magnam natus
-                            excepturi commodi nisi rerum molestiae qui at cum deserunt. Quas ab illum, cum laboriosam
-                            quia vel tempora qui? Esse!</p>
+                        <p class="lh-lg">Game industry news</p>
                         <button type="button" class="rounded-pill btn-rounded border-primary" onclick="location.href='./news.php'">Learn More
                             <i class="fas fa-arrow-right"></i>
                             </span>
@@ -194,7 +162,7 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="row">
+            <div class="row m-3">
                 <!-- MOBILE NUMBER -->
                 <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
                     <div class="contact-box__icon">
@@ -259,7 +227,7 @@
 
         <!-- COMPANY INFO -->
         <div class="container mt-5">
-            <div class="row text-white justify-content-center mt-3 pb-3">
+            <div class="row text-white justify-content-center m-3 pb-3">
                 <div class="col-12 col-sm-6 col-lg-6 mx-auto">
                     <h5 class="text-capitalize fw-bold">thth</h5>
                     <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
@@ -284,7 +252,7 @@
                     <ul class="list-inline company-list">
                         <li><a href="#">Your Account</a></li>
                         <li><a href="#">Create an account</a></li>
-                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Store</a></li>
                         <li><a href="#">Help</a></li>
                     </ul>
                 </div>
@@ -292,10 +260,10 @@
                     <h5 class="text-capitalize fw-bold">contact</h5>
                     <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px;">
                     <ul class="list-inline company-list">
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
-                        <li><a href="#">Lorem Ipsum</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter/a></li>
+                        <li><a href="#">Github</a></li>
                     </ul>
                 </div>
             </div>

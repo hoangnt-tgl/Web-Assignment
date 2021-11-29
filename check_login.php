@@ -3,9 +3,7 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    function AddToCart($id){
-        echo $id;
-    }
+    $avatar = "avatar.png";
     if (isset($_SESSION['username']))
     {
         $username = $_SESSION['username'];
@@ -28,20 +26,10 @@
                         <div class="cart-row">
                             <span class="cart-item cart-header cart-column">Sản Phẩm</span>
                             <span class="cart-price cart-header cart-column">Giá</span>
-                            <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                            <span class="cart-quantity cart-header cart-column">Action</span>
                         </div>
                         <div class="cart-items">
-                        <div class="cart-row">
-                            <div class="cart-item cart-column">
-                                <img class="cart-item-image" src="http://localhost:8080/HoangLC/Web-assignment1/images/news001.jpg" width="100" height="100">
-                                <span class="cart-item-title">God of Wars</span>
-                            </div>
-                            <span class="cart-price cart-column">50.99$</span>
-                            <div class="cart-quantity cart-column">
-                                <input class="cart-quantity-input" type="number" value="1">
-                                <button class="btn btn-danger" type="button">Xóa</button>
-                            </div>
-                        </div>
+                        
                         </div>
                         <div class="cart-total">
                             <strong class="cart-total-title">Tổng Cộng:</strong>
@@ -71,6 +59,7 @@
             </ul>
             </div>
             ';
+            $avatar = $std['image'];
     }
     else{
         echo'

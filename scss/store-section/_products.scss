@@ -28,7 +28,7 @@
             height: 100%;
         }
         &:hover {
-            @include gradient;
+            @include orange_gradient;
             .btn-rounded {
                 display: contents;
                 margin: 1rem;
