@@ -22,6 +22,7 @@
     {
         $_SESSION['error'] = "";
     }
+    $_SESSION['error'] = "";
     $username_error =$_SESSION["error"];
     $password_error  =$_SESSION["error"];
     $rp_password_error  =$_SESSION["error"];

@@ -12,6 +12,18 @@
 </head>
 
 <body>
+
+    <?php require_once 'product.php ' ?>
+    <?php
+
+    if (isset($_SESSION['add'])) {
+        if ($_SESSION['add'] == '1') {
+            echo '<script>alert("Add Success")</script>';
+        } else {
+        }
+        unset($_SESSION['add']);
+    }
+    ?>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-task-bar" id="sidebar-wrapper">

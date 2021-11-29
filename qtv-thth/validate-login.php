@@ -7,7 +7,7 @@
                       $servername = "localhost";
                       $username = "root";
                       $password = "";
-                      $dbname = "thth";
+                      $dbname = "thth_company";
                       $conn = new mysqli($servername, $username, $password, $dbname);
                       if ($conn->connect_error) {
                           echo "connect fail";
@@ -26,8 +26,8 @@
                             header('location:admin-dashboard.php');
                         }
                         else
-                        { $_SESSION['user_id'] = $id;
-                          echo "người dùng";}
+                        { $_SESSION['username'] = $id;
+                          header('location:index.php');}
                         
                           
                       }
