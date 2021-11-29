@@ -116,7 +116,7 @@
                                     <img class="img-responsive" src="./images/' . $avatar . '" alt="">
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-9 col-lg-10">
-                                    <input type="hidden" value="' . $std['news_id'] . '" name="news_id">
+                                    <input type="hidden" value="' . $_GET['id'] . '" name="news_id">
                                     <textarea class="form-control" placeholder="Your message" required name="message"></textarea>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                         ?>
                     </form>
                     <?php
-                    $sql = 'select C.account_id, C.content, C.commentday, C.news_id, A.image FROM `comment` C INNER JOIN account A ON C.account_id = A.account_id WHERE C.news_id = ' . $std['news_id'] . ' ORDER BY C.commentday DESC';
+                    $sql = 'select C.account_id, C.content, C.commentday, C.news_id, A.image FROM `comment` C INNER JOIN account A ON C.account_id = A.account_id WHERE C.news_id = ' . $_GET['id'] . ' ORDER BY C.commentday DESC';
                     $commentList = executeResult($sql);
                     echo '<h3>' . sizeof($commentList) . ' Comments</h3>';
                     foreach ($commentList as $std) {

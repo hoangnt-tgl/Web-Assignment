@@ -15,7 +15,9 @@ else {
         function alert($msg) {
             echo "<script type='text/javascript'>alert('$msg');</script>";
         }
+        $news_id = $_POST['news_id'];
         alert("Bạn cần đăng nhập để bình luận");
+        header('location:new_info.php?id='.$news_id.'');
     }
 }
 ?>
