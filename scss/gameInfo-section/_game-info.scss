@@ -30,6 +30,18 @@
     
 }
 
+.info {
+    h1, h3, p, .price {
+        color: black;
+    }
+}
+
+.system {
+    h3 {
+        color: black !important;
+    }
+}
+
 .main-pic {
     img {
         max-width: 300px;

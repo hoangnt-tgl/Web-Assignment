@@ -15,11 +15,11 @@ close_footer.onclick = function () {
 }
 order.onclick = function () {
     var cartItems = [];
-    if (localStorage.getItem("cartData") != null){
+    if (localStorage.getItem("cartData") != null) {
         cartItems = localStorage.getItem("cartData");
         cartItems = JSON.parse(cartItems);
     }
-    if (cartItems.length == 0){
+    if (cartItems.length == 0) {
         alert("Không có sản phẩm nào trong giỏ hàng");
         return;
     }
@@ -33,20 +33,20 @@ window.onclick = function (event) {
     }
 }
 
-function total(cart){
+function total(cart) {
     let result = 0;
-    for(let i = 0; i < cart.length; i++){
+    for (let i = 0; i < cart.length; i++) {
         let price = cart[i].price;
         price = parseFloat(price.slice(0, -1));
         result += price;
     }
     return result;
 }
-function removeItem(id){
+function removeItem(id) {
     let cartItems = localStorage.getItem("cartData");
     cartItems = JSON.parse(cartItems);
-    for (let i = 0; i < cartItems.length; i++){
-        if (id === cartItems[i].id){
+    for (let i = 0; i < cartItems.length; i++) {
+        if (id === cartItems[i].id) {
             cartItems.splice(i, 1);
         }
     }
@@ -55,15 +55,15 @@ function removeItem(id){
     modal.style.display = "block";
 
 }
-function displayCart(){
+function displayCart() {
     var cartItems = [];
-    if (localStorage.getItem("cartData") != null){
+    if (localStorage.getItem("cartData") != null) {
         cartItems = localStorage.getItem("cartData");
         cartItems = JSON.parse(cartItems);
     }
     document.getElementsByClassName("cart-items")[0].innerHTML = `
-    ${cartItems.map(function(cart){
-        return`
+    ${cartItems.map(function (cart) {
+        return `
         <div class="cart-row">
             <div class="cart-item cart-column">
                 <img class="cart-item-image" src="${cart.image}" width="100" height="100">
@@ -76,29 +76,29 @@ function displayCart(){
         </div>
     `
     }).join('')}`
-    document.getElementsByClassName("cart-total-price")[0].innerHTML = total(cartItems);
+    document.getElementsByClassName("cart-total-price")[0].innerHTML = total(cartItems).toFixed(2);
 }
-function AddToCart(product_id){
-    if (localStorage.getItem("username") === ""){
+function AddToCart(product_id) {
+    if (localStorage.getItem("username") === "") {
         window.location = "./game_info.php?id=" + product_id + "&error=notlogin";
         return;
     }
     var cartItems = [];
-    if (localStorage.getItem("cartData") != null){
+    if (localStorage.getItem("cartData") != null) {
         cartItems = localStorage.getItem("cartData");
         cartItems = JSON.parse(cartItems);
     };
     var img = document.getElementsByClassName("img-prd")[0].src
     var title = document.getElementsByClassName("content-product-h1")[0].innerText
     var price = document.getElementsByClassName("price")[0].innerText
-    
-    for (let i=0; i < cartItems.length; i++){
-        if (product_id === cartItems[i].id){
+
+    for (let i = 0; i < cartItems.length; i++) {
+        if (product_id === cartItems[i].id) {
             alert('Sản Phẩm Đã Có Trong Giỏ Hàng');
             return;
         }
     }
-    cartItems.push({id: product_id, name: title, image: img, price: price});
+    cartItems.push({ id: product_id, name: title, image: img, price: price });
     localStorage.setItem("cartData", JSON.stringify(cartItems));
     alert("The product has been added to cart")
     window.location.reload();

@@ -53,7 +53,7 @@ require_once('config.php');
         </div>
     </nav>
 
-    <?php 
+    <?php
     if (isset($_GET['error'])) {
         $error = $_GET["error"];
         if ($error === 'notlogin') {
@@ -65,8 +65,8 @@ require_once('config.php');
               </div>
             </div>
             ';
-        } 
-      }
+        }
+    }
     ?>
     <!-- GAME INFO SECTION  -->
 
@@ -96,7 +96,7 @@ require_once('config.php');
                     </div>
 
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 p-3">
+                <div class="info col-lg-6 col-md-12 col-sm-12 p-3">
                     <h1 class="content-product-h1">' . $std['name'] . '</h1>
                     <h3 class="fw-bold">Description: </h3>
                     <p>' . $std['description'] . '</p>
@@ -110,7 +110,7 @@ require_once('config.php');
                     </button>
                 </div>
 
-                <div class="col-12">
+                <div class="system col-12">
                     <h3 class="fw-bold">System Requirements</h3>
                     <table class="table">
                         <thead>
@@ -387,9 +387,9 @@ require_once('config.php');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/main.js"></script>
     <script>
-      $(".alert").click(function(){
-        $(this).fadeOut();
-      });
+        $(".alert").click(function() {
+            $(this).fadeOut();
+        });
     </script>
 </body>
 

@@ -54,7 +54,7 @@ require_once('config.php');
 
     <!-- PRODUCTS  SECTION-->
 
-    <section class="products mt-5 mb-3">
+    <section class="products m-0 p-3">
         <div class="container text-center">
             <div class="row justify-content-center">
                 <?php
@@ -63,8 +63,8 @@ require_once('config.php');
                 foreach ($productList as $std) {
                     echo '
                     <div class="col-md-6 col-lg-3 col-sm-12 game-container pb-3">
-                    <div class="container">
-                        <div class="img-container text-center">
+                    <div class="container p-0">
+                        <div class="img-container text-center mb-2">
                             <img src="./images/' . $std['image'] . '" alt="game-image">
                             <button type="button" class="rounded-pill btn-rounded mb-3">
                                 <a href="./game_info.php?id=' . $std['product_id'] . '">Learn More</a>
@@ -73,10 +73,10 @@ require_once('config.php');
                             </button>
                         </div>
                         <div class="game-info">
-                            <p class="fw-bold mb-0 align-middle" style="height: 50px">' . substr($std['name'], 0, 50) . '</p>
-                            <p class="info ">' . substr($std['description'], 0, 50) . '...</p>
+                            <h3 class="fw-bold mb-4 align-middle" style="height: 50px">' . $std['name'] . '</h3>
+                            <p class="info ">' . substr($std['description'], 0, 100) . '...</p>
                         </div>
-                        <div class="price text-end">
+                        <div class="price text-end p-4">
                             <h2>$' . $std['price'] . '</h2>
                         </div>
                     </div>

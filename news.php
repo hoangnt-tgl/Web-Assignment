@@ -51,7 +51,7 @@
 
     <!-- NEWS  SECTION-->
 
-    <section class="products mt-5 mb-3">
+    <section class="products p-3">
         <div class="container text-center">
             <div class="row justify-content-center">
                 <?php
@@ -60,8 +60,8 @@
                 foreach ($newsList as $std) {
                     echo '
                     <div class="col-md-6 col-lg-3 col-sm-12 game-container pb-3">
-                        <div class="container">
-                            <div class="img-container text-center">
+                        <div class="container p-0">
+                            <div class="img-container text-center mb-2">
                                 <img src="./images/' . $std['image'] . '" alt="game-image">
                                 <button type="button" class="rounded-pill btn-rounded mb-3">
                                     <a href="./new_info.php?id=' . $std['news_id'] . '">Learn More</a>
@@ -71,9 +71,8 @@
                             </div>
                             <div class="game-info">
                                 <p class="date">' . $std['postday'] . '</p>
-                                <h3 class="fw-bold mt-0">' . substr($std['title'], 0, 25) . '...</h3>
-                                <p class="info">' . substr($std['description'], 0, 100) . '...
-                                </p>
+                                <h3 class="fw-bold mt-0">' . $std['title'] . '</h3>
+                                <p class="info">' . substr($std['description'], 0, 90) . '...</p>
                             </div>
                         </div>
                     </div>
