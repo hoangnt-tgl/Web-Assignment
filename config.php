@@ -1,6 +1,6 @@
 <?php
 
-define('HOST', 'localhost:3307');
+define('HOST', 'localhost');
 // define('HOST', 'localhost');
 define('DATABASE', 'thth_company');
 define('USERNAME', 'root');

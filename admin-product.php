@@ -97,8 +97,9 @@
                     <div class="row my-5">
                         <div class= "search-row">
                             <h3 class="fs-4 mb-3" style="float: left;">All Products</h3>
-                            <input id = "product-search" type="text" placeholder="Search product name" class="search-control">
+                          
                             <button class="view-modal" >Add Product</button>
+                            <button class="view-modal2" >Edit Product</button>
                             <button class='view-btn' id='tomainweb'>View Main Web</button>
                             
                         
@@ -143,8 +144,8 @@
                                                     echo "<td scope='col' class='rate'>". $row['rating']."</td>";
                                                     echo "<td scope='col' class='quan'>". $row['quantity']."</td>";
                                                     ?>
-
-                                                    <td scope='col' class='recom'><a href="product.php?delete=<?php echo $row['product_id'];?>" class ="btn btn-danger">Delete</a></td>
+                                                    <td scope='col' class='recom'>
+                                                        <a href="product.php?delete=<?php echo $row['product_id'];?>" class ="btn btn-danger">Delete</a></td>
                                                     <?php
                                                     echo "</tr>";   
                                                 }
@@ -174,12 +175,7 @@
       
       <div class="field">
     <form action="product.php" method = "POST">
-        <div class="form-row py-1 pt-1">
-            <div class="text-start offset-0">
-                <h5 style="float:left;">ID</h5>  
-                <input  type="text" name="id-product" class="input-admin-product px-3" >           
-            </div>
-        </div>
+      
         <div class="form-row py-1 pt-1">
             <div class="text-start offset-0">
                 <h5 style="float:left;">Name</h5>  
@@ -256,6 +252,92 @@
       </div>
     </div>
   </div>
+  <div class="popup2">
+    <header>
+      <span>Edit Product</span>
+      <div class="close2"><i class="fas fa-times-circle"></i></div>
+    </header>
+    <div class="content2">
+      
+      <div class="field2">
+    <form action="product.php" method = "POST">
+      
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Name</h5>  
+                <input  type="text" name="name-product2" class="input-admin-product px-3" >           
+            </div>
+        </div>
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Price</h5>  
+                <input  type="text" name="price-product2" class="input-admin-product px-3" >           
+            </div>
+        </div>
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Image</h5>  
+                <input type="file" class="img2" name="image-product2" accept="image/*">        
+            </div>
+        </div>
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Quantity</h5>  
+                <input  type="text" name="quantity-product2" class="input-admin-product px-3" >           
+            </div>
+        </div>
+        <div class="form-row py-1 pt-1">
+            <div class="text-start offset-0">
+                <h5 style="float:left;">Description</h5>  
+                <textarea name="des-product2"  class="input-register-about px-3" placeholder="E.g. I like action game"></textarea>
+                                         
+            </div>
+        </div>
+        
+        <div class="form-row py-1 pt-1">
+        <label >OS:</label>
+            <select name="os2" >
+                <option value="Windows 7">Windows 7</option>
+                <option value="Windows 10">Windows 10</option>
+             
+            </select>
+            <label >Processor:</label>
+            <select name="pro2" >
+                <option value="Intel Core i3-530">Intel Core i3-530</option>
+                <option value="Intel Core i7">Intel Core i7</option>
+             </select>
+            
+        </div>
+        <div class="form-row py-1 pt-1">
+        <label >Memmory:</label>
+            <select name="mem2" >
+                <option value="4">4</option>
+               <option value="8">8</option> 
+            </select>
+            <label >Storage  :</label>
+            <select name="sto2" >
+                <option value="3">3</option>
+                <option value="4">4</option>
+               
+             </select>
+        </div>
+        <div class="form-row py-1 pt-1">
+            <label >Graphic:</label>
+            <select name="gra2" >
+                <option value="NVIDIA GeForce GTX 260 / ATI Radeon HD 4870">NVIDIA GeForce GTX 260 / ATI Radeon HD 4870</option>
+                <option value="NVIDIA GeForce GTX 260 / ATI Radeon HD 4870">NVIDIA GeForce GTX 260 / ATI Radeon HD 4870</option>
+             </select>
+        </div>
+        <div class="form-row py-1 pt-1">
+        <div class="offset-3 col-lg-10">                
+        <input type="submit" name ="save3" class="add-btn text-center" value="SaveProduct" />                                                            
+        </div>                                  
+        </div>
+    </form>
+        
+      </div>
+    </div>
+  </div>
   <script>
     const viewBtn = document.querySelector(".view-modal"),
     popup = document.querySelector(".popup"),
@@ -271,6 +353,22 @@
     }
     document.getElementById("tomainweb").onclick = function () {
         location.href = "./store.php";}
+  
+  </script>
+   <script>
+    const viewBtn2 = document.querySelector(".view-modal2"),
+    popup2 = document.querySelector(".popup2"),
+    close2 = popup.querySelector(".close2"),
+    field2 = popup.querySelector(".field2");
+    viewBtn2.onclick = ()=>{
+      popup2.classList.toggle("show");
+    }
+    close2.onclick = ()=>{
+      viewBtn2.click();
+
+    
+    }
+ 
   
   </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>

@@ -35,7 +35,7 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">        
             <div class="container-fluid px-4">
-                <div class="row g-3 my-2">
+                <!-- <div class="row g-3 my-2">
                     
 
                     <div class="col-md-3">
@@ -47,7 +47,7 @@
                             <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <button class="view-btn" onclick="sortTable()">Sort</button>
                 <div class="row my-5">
                 
@@ -123,8 +123,8 @@
     rows = table.rows;
     for (i = 1; i < (rows.length - 1); i++) {
       shouldSwitch = false;
-      x = rows[i].getElementsByTagName("TD")[2];
-      y = rows[i + 1].getElementsByTagName("TD")[2];
+      x = rows[i].getElementsByTagName("TD")[1];
+      y = rows[i + 1].getElementsByTagName("TD")[1];
       if (dir == "asc") {
         if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
           shouldSwitch= true;

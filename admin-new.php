@@ -64,12 +64,12 @@
                                         die("Connection failed: " . $conn->connect_error);
                                         }
                                   
-                                        $sql1 = "SELECT * from account ";
+                                        $sql1 = "SELECT * from news ";
                                         $result1 = mysqli_query($conn,$sql1); 
                                         $amount1 = mysqli_num_rows($result1) - 1;
                                         echo '<h3 class="fs-2">'.$amount1.'</h3>';
                                     ?>
-                                    <p class="fs-5">Total Account</p>
+                                    <p class="fs-5">Total News</p>
                                 </div>
                                 <i class="fas fa-newspaper fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                             </div>

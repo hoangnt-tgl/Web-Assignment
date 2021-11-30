@@ -66,7 +66,7 @@
                     <div class="row my-5">
                     <div class= "search-row">
                         <h3 class="fs-4 mb-3" style="float:left;" >Current User</h3>
-                        <input  type="text" placeholder="Search product name" class="search-control">
+                    
                         <div class="col">
                         
                         <br><br>
