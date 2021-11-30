@@ -23,9 +23,18 @@ order.onclick = function () {
         alert("Không có sản phẩm nào trong giỏ hàng");
         return;
     }
+    var idList = '';
+    for (let i = 0; i < cartItems.length; i++) {
+        if (i === 0){
+            idList += cartItems[i].id;
+        }
+        else {
+            idList += (',' + cartItems[i].id);
+        }
+    }
     localStorage.setItem("cartData", JSON.stringify([]));
-    alert("Cảm ơn bạn đã thanh toán đơn hàng");
-    window.location.reload();
+    window.location = "./pay.php?cart=" + idList;
+
 }
 window.onclick = function (event) {
     if (event.target == modal) {

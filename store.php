@@ -73,10 +73,10 @@ require_once('config.php');
                             </button>
                         </div>
                         <div class="game-info">
-                            <h3 class="fw-bold mb-4 align-middle" style="height: 50px">' . $std['name'] . '</h3>
+                            <h3 class="fw-bold mb-5 align-middle" style="height: 50px">' . $std['name'] . '</h3>
                             <p class="info ">' . substr($std['description'], 0, 100) . '...</p>
                         </div>
-                        <div class="price text-end p-4">
+                        <div class="price text-end p-2">
                             <h2>$' . $std['price'] . '</h2>
                         </div>
                     </div>

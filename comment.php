@@ -7,7 +7,7 @@ if (isset($_SESSION['username'])){
         $message = $_POST['message'];
         $sql = 'insert into `comment` (`news_id`, `account_id`, `content`) VALUES ('.$news_id.', "'.$_SESSION['username'].'", "'.$message.'")';
         execute($sql);
-        header('location:new_info.php?id='.$news_id.'');
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
 else {
