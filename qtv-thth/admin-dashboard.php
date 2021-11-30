@@ -16,7 +16,7 @@
         <!-- Sidebar -->
         <div class="bg-task-bar" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class=""></i>THTH</div>
+                    class="fas fa-user-secret me-2"></i>THTH</div>
             <div class="list-group list-group-flush my-3">
                 <a href="./admin-dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
@@ -42,7 +42,7 @@
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
                                 <h3 class="fs-2">%25</h3>
-                                <p class="fs-5">Total Profit</p>
+                                <p class="fs-5">Increase</p>
                             </div>
                             <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>

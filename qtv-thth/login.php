@@ -24,18 +24,9 @@
 
                     <div class="col-lg-7 text-center py-5">
                         <h1 class="animate__animated animate__pulse">THTH Entertainment</h1>
-                        
                         <form action="validate-login.php" method="post">
                           <div class="form-row py-4 pt-5">
                             <div class="offset-1 col-lg-10">
-                                    <?php
-                                session_start(); 
-                                if (isset($_SESSION['error']))
-                                {
-                                  echo '<p style="color:red;">'.$_SESSION['error'] .'</p>';
-                                  unset($_SESSION['error']);
-                                }
-                                ?>
                                 <input type="text" name="id" class="input-login px-3" placeholder="Username">
 
                             </div>
@@ -60,9 +51,9 @@
 
                           </div>
                         </form>
-                        <!-- <p>Or Login With</p>
+                        <p>Or Login With</p>
                                         
-                            <img class="google-icon" alt="login-with-google" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/> -->
+                            <img class="google-icon" alt="login-with-google" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
                       
                     </div>
 

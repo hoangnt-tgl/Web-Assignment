@@ -15,7 +15,7 @@
 
     <?php require_once 'product.php '?>
     <?php
-    
+   
     if (isset($_SESSION['add']))
     {
         if ( $_SESSION['add'] == '1')
@@ -24,7 +24,7 @@
         }
         else
         {
-            echo '<script>alert("Add Fail")</script>';
+             
         }
         unset($_SESSION['add']);
     }
@@ -33,7 +33,7 @@
         <!-- Sidebar -->
         <div class="bg-task-bar" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class=""></i>THTH</div>
+                    class="fas fa-user-secret me-2"></i>THTH</div>
             <div class="list-group list-group-flush my-3">
                 <a href="./admin-dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
@@ -96,10 +96,10 @@
     
                     <div class="row my-5">
                         <div class= "search-row">
-                            <h3 class="fs-4 mb-3" style="float: left;">All Products</h3>
+                            <h3 class="fs-4 mb-3" style="float: left;">Recent Orders</h3>
                             <input id = "product-search" type="text" placeholder="Search product name" class="search-control">
                             <button class="view-modal" >Add Product</button>
-                            <button class='view-btn' id='tomainweb'>View Main Web</button>
+                            <button class='view-btn'>View Main Web</button>
                             
                         
                         <div class="col">
@@ -195,7 +195,7 @@
         <div class="form-row py-1 pt-1">
             <div class="text-start offset-0">
                 <h5 style="float:left;">Image</h5>  
-                <input type="file" class="img2" name="image-product" accept="image/*">        
+                <input  type="text" name="image-product" class="input-admin-product px-3" >           
             </div>
         </div>
         <div class="form-row py-1 pt-1">
@@ -215,35 +215,35 @@
         <div class="form-row py-1 pt-1">
         <label >OS:</label>
             <select name="os" >
-                <option value="Windows 7">Windows 7</option>
-                <option value="Windows 10">Windows 10</option>
+                <option value="volvo">Windows 7</option>
+                <option value="saab">Windows 10</option>
              
             </select>
             <label >Processor:</label>
             <select name="pro" >
-                <option value="Intel Core i3-530">Intel Core i3-530</option>
-                <option value="Intel Core i7">Intel Core i7</option>
+                <option value="volvo">Intel Core i3-530</option>
+                <option value="saab">Intel Core i7</option>
              </select>
             
         </div>
         <div class="form-row py-1 pt-1">
         <label >Memmory:</label>
             <select name="mem" >
-                <option value="4">4</option>
-               <option value="8">8</option> 
+                <option value="volvo">4</option>
+               <option value="saab">8</option> 
             </select>
             <label >Storage  :</label>
             <select name="sto" >
-                <option value="3">3</option>
-                <option value="4">4</option>
+                <option value="volvo">3</option>
+                <option value="saab">4</option>
                
              </select>
         </div>
         <div class="form-row py-1 pt-1">
             <label >Graphic:</label>
             <select name="gra" >
-                <option value="NVIDIA GeForce GTX 260 / ATI Radeon HD 4870">NVIDIA GeForce GTX 260 / ATI Radeon HD 4870</option>
-                <option value="NVIDIA GeForce GTX 260 / ATI Radeon HD 4870">NVIDIA GeForce GTX 260 / ATI Radeon HD 4870</option>
+                <option value="volvo">NVIDIA GeForce GTX 260 / ATI Radeon HD 4870</option>
+                <option value="saab">NVIDIA GeForce GTX 260 / ATI Radeon HD 4870</option>
              </select>
         </div>
         <div class="form-row py-1 pt-1">
@@ -269,8 +269,7 @@
 
     
     }
-    document.getElementById("tomainweb").onclick = function () {
-        location.href = "./store.php";}
+    
   
   </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>

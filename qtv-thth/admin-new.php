@@ -12,27 +12,11 @@
 </head>
 
 <body>
-<?php require_once 'product.php '?>
-    <?php
-    
-    if (isset($_SESSION['add']))
-    {
-        if ( $_SESSION['add'] == '1')
-        {
-            echo '<script>alert("Add Success")</script>';
-        }
-        else
-        {
-            echo '<script>alert("Add Fail")</script>';
-        }
-        unset($_SESSION['add']);
-    }
-    ?>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-task-bar" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class=""></i>THTH</div>
+                    class="fas fa-user-secret me-2"></i>THTH</div>
             <div class="list-group list-group-flush my-3">
                 <a href="./admin-dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
@@ -79,7 +63,7 @@
                     </div>
                     <h3 class="fs-4 mb-3" style="float: left;">Current News</h3>
                     <button class="view-modal" >Add News</button>
-                    <button class='view-btn' id='tomainweb'>View Main Web</button>
+                    <button class='view-btn'>View Main Web</button>
                     <br><br>
                     <div id="page-content-wrapper-new">  
                         <ul id="item">
@@ -104,14 +88,7 @@
                                                    
                                                     echo "<di class='myItem'>";
                                                     echo "<h3>". $row['title']."</h3>";
-                                                    $link = './new_info.php?id=' . $row['news_id'];
-                                                   
-                                                    echo    "<a href=".$link.">View Detail </a>";
-                                                    
-
-                                                    ?>
-                                                    <a  style="margin-left:20px;"href="product.php?delete2=<?php echo $row['news_id'];?>" class ="btn btn-danger">Delete</a>
-                                                    <?php
+                                                    echo "<p> ". $row['description']."</p>";
                                                     echo "</di>";
                                                 
                                                                                                 
@@ -139,20 +116,20 @@
         <div class="form-row py-1 pt-1">
             <div class="text-start offset-0">
                 <h5 style="float:left;">Title</h5>  
-                <input  type="text" name="title-news" class="input-admin-product px-3" >           
+                <input  type="text" name="id-product" class="input-admin-product px-3" >           
             </div>
         </div>
        
         <div class="form-row py-1 pt-1">
             <div class="text-start offset-0">
                 <h5 style="float:left;">Image</h5>  
-                <input type="file" class="img2" name="image-news" accept="image/*">           
+                <input  type="text" name="image-product" class="input-admin-product px-3" >           
             </div>
         
         <div class="form-row py-1 pt-1">
             <div class="text-start offset-0">
                 <h5 style="float:left;">Description</h5>  
-                <textarea name="descreption-news"  class="input-register-about px-3" placeholder="E.g. I like action game"></textarea>
+                <textarea name="des-product"  class="input-register-about px-3" placeholder="E.g. I like action game"></textarea>
                                          
             </div>
         </div>
@@ -160,7 +137,7 @@
         
         <div class="form-row py-1 pt-1">
         <div class="offset-3 col-lg-10">                
-        <input type="submit" name ="save2" class="add-btn text-center" value="Add News" />                                                            
+        <input type="submit" name ="save" class="add-btn text-center" value="Add News" />                                                            
         </div>                                  
         </div>
     </form>
@@ -185,8 +162,7 @@
 
     
     }
-    document.getElementById("tomainweb").onclick = function () {
-        location.href = "./news.php";}
+    
   
   </script>
 
